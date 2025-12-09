@@ -1,0 +1,1447 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>YOUR NAME - Videographer UAE</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Montserrat:wght@200;300;400;500;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --black: #000000;
+            --white: #FFFFFF;
+            --gold: #D4AF37;
+            --gold-light: #F4E4C1;
+            --gray: #333333;
+            --light-gray: #F8F8F8;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: var(--black);
+            color: var(--white);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        /* ============================================
+           NAVIGATION
+           ============================================ */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 2rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            transition: all 0.3s;
+            background: transparent;
+        }
+
+        nav.scrolled {
+            background: rgba(0, 0, 0, 0.95);
+            padding: 1.5rem 5%;
+            border-bottom: 1px solid var(--gold);
+        }
+
+        .logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--white);
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .nav-menu {
+            display: flex;
+            gap: 3rem;
+            list-style: none;
+        }
+
+        .nav-menu a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-weight: 400;
+            transition: color 0.3s;
+        }
+
+        .nav-menu a:hover {
+            color: var(--gold);
+        }
+
+        .hamburger {
+            display: none;
+            flex-direction: column;
+            gap: 5px;
+            cursor: pointer;
+        }
+
+        .hamburger span {
+            width: 25px;
+            height: 2px;
+            background: var(--white);
+            transition: 0.3s;
+        }
+
+        /* ============================================
+           HERO
+           ============================================ */
+        .hero {
+            position: relative;
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            overflow: hidden;
+            background: var(--black);
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        /* Professional image treatment */
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at center, transparent 0%, rgba(0,0,0,0.2) 100%),
+                linear-gradient(to bottom, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.5) 100%);
+            z-index: 1;
+        }
+
+        /* Vignette effect for professional look */
+        .hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            box-shadow: inset 0 0 150px rgba(0,0,0,0.5);
+            z-index: 1;
+        }
+
+        /* To add your photo as background, add this to the HTML:
+           <section class="hero" style="background-image: url('your-photo.jpg');"> */
+
+        .hero-video {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.7;
+            filter: grayscale(20%) contrast(1.1);
+        }
+
+        .hero-video-placeholder {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 50%, #1a1a1a 100%);
+        }
+
+        .hero-photo {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+            filter: grayscale(10%) contrast(1.05) brightness(0.95);
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: 
+                linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.5) 100%),
+                linear-gradient(to bottom, transparent 0%, rgba(0,0,0,0.3) 100%);
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: var(--white);
+            padding: 2rem;
+            text-shadow: 0 2px 15px rgba(0,0,0,0.6), 0 0 30px rgba(0,0,0,0.4);
+        }
+
+        .hero-subtitle {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 5px;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 300;
+        }
+
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 5rem;
+            font-weight: 700;
+            line-height: 1.2;
+            margin-bottom: 1.5rem;
+            letter-spacing: 2px;
+            position: relative;
+            display: inline-block;
+        }
+
+        .hero-title::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 100px;
+            height: 2px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .hero-description {
+            font-size: 1.2rem;
+            max-width: 700px;
+            margin: 0 auto 3rem;
+            font-weight: 300;
+            letter-spacing: 1px;
+            line-height: 1.8;
+        }
+
+        .hero-cta {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: transparent;
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            font-size: 0.8rem;
+            font-weight: 500;
+            border: 2px solid var(--gold);
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+
+        .hero-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: var(--gold);
+            transition: left 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: -1;
+        }
+
+        .hero-cta:hover::before {
+            left: 0;
+        }
+
+        .hero-cta:hover {
+            color: var(--black);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        /* ============================================
+           ICONIC QUOTE
+           ============================================ */
+        .iconic-section {
+            padding: 120px 5%;
+            background: var(--black);
+            text-align: center;
+            color: var(--white);
+        }
+
+        .iconic-quote {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            font-style: italic;
+            margin-bottom: 2rem;
+            line-height: 1.3;
+        }
+
+        .iconic-quote span {
+            font-size: 5.5rem;
+            font-weight: 700;
+            font-style: normal;
+            display: block;
+            margin: 1rem 0;
+            letter-spacing: -2px;
+            color: var(--gold);
+        }
+
+        .iconic-subtitle {
+            font-size: 1rem;
+            color: #CCCCCC;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+
+        /* ============================================
+           ABOUT
+           ============================================ */
+        .about-section {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: var(--black);
+        }
+
+        .about-content {
+            padding: 100px 80px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            background: #0a0a0a;
+        }
+
+        .section-label {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 4px;
+            color: var(--gold);
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+
+        .about-content h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            font-weight: 600;
+            line-height: 1.2;
+            color: var(--white);
+        }
+
+        .about-content p {
+            font-size: 1rem;
+            line-height: 1.9;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+            color: #CCCCCC;
+        }
+
+        .about-education {
+            margin: 2.5rem 0;
+            padding: 2rem 0;
+            border-top: 1px solid rgba(212, 175, 55, 0.2);
+            border-bottom: 1px solid rgba(212, 175, 55, 0.2);
+        }
+
+        .education-line {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 1rem;
+            gap: 2rem;
+        }
+
+        .education-line:last-child {
+            margin-bottom: 0;
+        }
+
+        .education-label {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            font-weight: 600;
+            min-width: 100px;
+        }
+
+        .education-value {
+            font-size: 0.95rem;
+            color: #CCCCCC;
+            font-weight: 400;
+            text-align: right;
+            flex: 1;
+        }
+
+        .about-image {
+            position: relative;
+            min-height: 600px;
+            background: var(--black);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .about-image-placeholder {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            color: var(--gold);
+        }
+
+        .about-stats {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 3rem;
+            margin-top: 3rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .stat-item h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-item p {
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gray);
+        }
+
+        /* ============================================
+           PORTFOLIO - Seamless Showcase
+           ============================================ */
+        .portfolio-section {
+            padding: 100px 0;
+            background: var(--black);
+        }
+
+        .portfolio-header {
+            text-align: center;
+            padding: 0 5% 80px;
+        }
+
+        .portfolio-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .portfolio-subtitle {
+            font-size: 1rem;
+            color: #CCCCCC;
+            font-weight: 300;
+            letter-spacing: 2px;
+            font-style: italic;
+        }
+
+        /* Split Screen Layout */
+        .split-video-layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 0;
+            margin-bottom: 0;
+        }
+
+        .video-container {
+            position: relative;
+            aspect-ratio: 9/16;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--black);
+        }
+
+        .video-container.landscape {
+            grid-column: span 2;
+            aspect-ratio: 16/9;
+        }
+
+        .video-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #1a1a1a, #2a2a2a);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+        }
+
+        .video-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.4s;
+            padding: 2rem;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .video-container:hover .video-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 80px;
+            height: 80px;
+            border: 2px solid var(--gold);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 2rem;
+            transition: all 0.3s;
+        }
+
+        .play-icon::before {
+            content: '▶';
+            font-size: 1.5rem;
+            color: var(--gold);
+            margin-left: 5px;
+        }
+
+        .video-container:hover .play-icon {
+            background: var(--gold);
+        }
+
+        .video-container:hover .play-icon::before {
+            color: var(--black);
+        }
+
+        .video-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.8rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .video-description {
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+            color: #CCCCCC;
+            font-weight: 300;
+        }
+
+        /* Text Block Between Videos */
+        .text-between-videos {
+            grid-column: span 2;
+            background: #0a0a0a;
+            padding: 80px 10%;
+            text-align: center;
+            color: var(--white);
+        }
+
+        .text-between-videos h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2.5rem;
+            font-style: italic;
+            margin-bottom: 1.5rem;
+            color: var(--gold);
+        }
+
+        .text-between-videos p {
+            font-size: 1rem;
+            line-height: 1.8;
+            font-weight: 300;
+            max-width: 700px;
+            margin: 0 auto;
+            color: #CCCCCC;
+        }
+            margin: 0 auto;
+            color: var(--gray);
+        }
+
+        /* Scattered Portfolio Style */
+        .scattered-portfolio {
+            padding: 0 5%;
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            gap: 30px;
+            margin: 80px 0;
+        }
+
+        .portfolio-item {
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+            background: var(--black);
+        }
+
+        .portfolio-item.large {
+            grid-column: span 8;
+            aspect-ratio: 16/9;
+        }
+
+        .portfolio-item.medium {
+            grid-column: span 4;
+            aspect-ratio: 4/5;
+        }
+
+        .portfolio-item.small {
+            grid-column: span 6;
+            aspect-ratio: 16/9;
+        }
+
+        /* ============================================
+           INSTAGRAM
+           ============================================ */
+        .instagram-section {
+            padding: 100px 5%;
+            background: var(--black);
+            text-align: center;
+        }
+
+        .instagram-header {
+            margin-bottom: 60px;
+        }
+
+        .instagram-header h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .instagram-handle {
+            font-size: 1.2rem;
+            color: var(--gold);
+            font-weight: 500;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
+            display: block;
+        }
+
+        .instagram-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem 2.5rem;
+            background: linear-gradient(135deg, #833AB4, #E1306C, #F56040);
+            color: var(--white);
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            border-radius: 50px;
+            transition: all 0.3s;
+        }
+
+        .instagram-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(225, 48, 108, 0.4);
+        }
+
+        .instagram-icon {
+            font-size: 1.5rem;
+        }
+
+        .instagram-grid {
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 15px;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .instagram-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            background: var(--gray);
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
+
+        .instagram-item:hover {
+            transform: scale(1.05);
+        }
+
+        .instagram-placeholder {
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #833AB4, #E1306C);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: var(--white);
+        }
+
+        /* ============================================
+           CONTACT
+           ============================================ */
+        .contact-section {
+            background: var(--black);
+            color: var(--white);
+            padding: 150px 5%;
+        }
+
+        .contact-container {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .contact-container h2 {
+            font-family: 'Playfair Display', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .contact-subtitle {
+            font-size: 1.1rem;
+            margin-bottom: 4rem;
+            font-weight: 300;
+            color: #CCCCCC;
+        }
+
+        .contact-form {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.5);
+            color: var(--white);
+            padding: 1.2rem 0;
+            font-family: 'Montserrat', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #888888;
+        }
+
+        .form-group textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .submit-btn {
+            background: var(--gold);
+            color: var(--black);
+            border: none;
+            padding: 1.5rem 4rem;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            cursor: pointer;
+            font-weight: 600;
+            transition: all 0.3s;
+            align-self: center;
+            margin-top: 2rem;
+        }
+
+        .submit-btn:hover {
+            background: var(--white);
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            margin-top: 5rem;
+            padding-top: 3rem;
+            border-top: 1px solid rgba(212, 175, 55, 0.3);
+        }
+
+        .contact-item {
+            text-align: center;
+        }
+
+        .contact-item h4 {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: var(--gold);
+            margin-bottom: 0.5rem;
+        }
+
+        .contact-item p {
+            font-size: 1rem;
+            color: #CCCCCC;
+        }
+
+        /* ============================================
+           FOOTER
+           ============================================ */
+        footer {
+            padding: 4rem 5%;
+            background: var(--black);
+            border-top: 1px solid var(--gold);
+            color: var(--white);
+        }
+
+        .footer-container {
+            max-width: 1600px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-logo {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+
+        .footer-socials {
+            display: flex;
+            gap: 2rem;
+        }
+
+        .footer-socials a {
+            color: var(--white);
+            text-decoration: none;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: color 0.3s;
+        }
+
+        .footer-socials a:hover {
+            color: var(--gold);
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            color: #888888;
+            font-weight: 300;
+        }
+
+        /* ============================================
+           VIDEO MODAL
+           ============================================ */
+        .modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.98);
+            z-index: 10000;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal.active {
+            display: flex;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 1200px;
+            aspect-ratio: 16/9;
+        }
+
+        .modal-close {
+            position: absolute;
+            top: -50px;
+            right: 0;
+            background: none;
+            border: none;
+            color: var(--white);
+            font-size: 2rem;
+            cursor: pointer;
+            z-index: 10001;
+        }
+
+        .modal-iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Fade-in Animation */
+        .fade-in {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: opacity 0.6s, transform 0.6s;
+        }
+
+        .fade-in.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* ============================================
+           RESPONSIVE
+           ============================================ */
+        @media (max-width: 1024px) {
+            .hero-title {
+                font-size: 3.5rem;
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .about-section {
+                grid-template-columns: 1fr;
+            }
+
+            .about-content {
+                padding: 60px 40px;
+            }
+
+            .scattered-portfolio {
+                grid-template-columns: 1fr;
+            }
+
+            .portfolio-item.large,
+            .portfolio-item.medium,
+            .portfolio-item.small {
+                grid-column: span 1;
+            }
+
+            .instagram-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 0;
+                width: 100%;
+                height: 100vh;
+                background: rgba(0, 0, 0, 0.98);
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
+                transition: left 0.3s;
+                gap: 2rem;
+            }
+
+            .nav-menu.active {
+                left: 0;
+            }
+
+            .hero {
+                background-attachment: scroll;
+            }
+
+            .hero-title {
+                font-size: 2.5rem;
+            }
+
+            .hero-title::after {
+                width: 60px;
+            }
+
+            .iconic-quote {
+                font-size: 2rem;
+            }
+
+            .iconic-quote span {
+                font-size: 3.5rem;
+            }
+
+            .split-video-layout {
+                grid-template-columns: 1fr;
+            }
+
+            .video-container.landscape {
+                grid-column: span 1;
+            }
+
+            .text-between-videos {
+                grid-column: span 1;
+                padding: 60px 5%;
+            }
+
+            .about-stats {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .education-line {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+
+            .education-value {
+                text-align: left;
+            }
+
+            .contact-info {
+                flex-direction: column;
+                gap: 2rem;
+            }
+
+            .footer-container {
+                flex-direction: column;
+                gap: 2rem;
+                text-align: center;
+            }
+
+            .brands-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .instagram-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="logo">YOUR NAME</div>
+        <ul class="nav-menu">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#work">Work</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="hamburger" id="hamburger">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <!-- TO ADD YOUR PHOTO AS BACKGROUND: Add style="background-image: url('your-photo.jpg');" to the section tag below -->
+    <section class="hero" id="home">
+        <!-- Example: <section class="hero" id="home" style="background-image: url('images/my-photo.jpg');"> -->
+        
+        <!-- OPTION 1: Use background image (add style above) - RECOMMENDED -->
+        
+        <!-- OPTION 2: Use video background -->
+        <!-- <video class="hero-video" autoplay muted loop playsinline>
+            <source src="your-hero-reel.mp4" type="video/mp4">
+        </video> -->
+        
+        <!-- OPTION 3: Use <img> tag -->
+        <!-- <img src="your-photo.jpg" alt="Your Name" class="hero-photo"> -->
+        
+        <!-- Placeholder (remove when you add photo/video) -->
+        <!-- <div class="hero-video-placeholder"></div> -->
+        
+        <div class="hero-overlay"></div>
+        <div class="hero-content">
+            <p class="hero-subtitle">Videographer • UAE & India</p>
+            <h1 class="hero-title">Cinematic<br>Excellence</h1>
+            <p class="hero-description">
+                Creating compelling visual narratives that capture moments and tell stories
+            </p>
+            <a href="#contact" class="hero-cta">Let's Create</a>
+        </div>
+    </section>
+
+    <!-- Iconic Quote Section -->
+    <section class="iconic-section">
+        <div class="iconic-quote fade-in">
+            creating the most
+            <span>"ICONIC"</span>
+            moments
+        </div>
+        <p class="iconic-subtitle fade-in">Selected highlights from my work</p>
+    </section>
+
+    <!-- About Section -->
+    <section class="about-section" id="about">
+        <div class="about-content">
+            <p class="section-label">About</p>
+            <h2>My Approach</h2>
+            <p>
+                With over 4 years of experience creating cinematic content across UAE and India, 
+                I specialize in capturing compelling narratives that resonate. Every project is 
+                approached with artistic vision and technical excellence.
+            </p>
+            <p>
+                From intimate celebrations to brand stories, my work blends creative storytelling 
+                with professional execution. I collaborate with talented editors and colorists 
+                to deliver premium, polished content that exceeds expectations.
+            </p>
+            
+            <div class="about-education">
+                <div class="education-line">
+                    <span class="education-label">Education</span>
+                    <span class="education-value">BA in Multimedia, 2021</span>
+                </div>
+                <div class="education-line">
+                    <span class="education-label">Expertise</span>
+                    <span class="education-value">Cinema Cameras • Drone Operations • Gimbal Stabilization • Lighting</span>
+                </div>
+            </div>
+
+            <div class="about-stats">
+                <div class="stat-item">
+                    <h3>200+</h3>
+                    <p>Projects Completed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>4+</h3>
+                    <p>Years Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>UAE & India</h3>
+                    <p>Based</p>
+                </div>
+            </div>
+        </div>
+        <div class="about-image">
+            <!-- <img src="your-photo.jpg" alt="Behind the Scenes"> -->
+            <div class="about-image-placeholder">🎬</div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section - Seamless -->
+    <section class="portfolio-section" id="work">
+        <div class="portfolio-header">
+            <h2>My Work</h2>
+            <p class="portfolio-subtitle">Curated highlights • Some videos are portrait, some landscape</p>
+        </div>
+
+        <!-- Commercial Work First -->
+        <div class="split-video-layout">
+            <!-- Commercial Video 1 - Portrait -->
+            <div class="video-container fade-in" data-video="https://youtu.be/bChg4X4-AFY">
+                <div class="video-placeholder">🏢</div>
+                <div class="video-overlay">
+                    <div class="play-icon"></div>
+                    <h3 class="video-title">Brand Campaign</h3>
+                    <p class="video-description">Dubai, 2024</p>
+                </div>
+            </div>
+
+            <!-- Commercial Video 2 - Portrait -->
+            <div class="video-container fade-in" data-video="YOUR_YOUTUBE_ID">
+                <div class="video-placeholder">💼</div>
+                <div class="video-overlay">
+                    <div class="play-icon"></div>
+                    <h3 class="video-title">Corporate Event</h3>
+                    <p class="video-description">Abu Dhabi, 2024</p>
+                </div>
+            </div>
+
+            <!-- Commercial Video 3 - Landscape -->
+            <div class="video-container landscape fade-in" data-video="YOUR_YOUTUBE_ID">
+                <div class="video-placeholder">🎬</div>
+                <div class="video-overlay">
+                    <div class="play-icon"></div>
+                    <h3 class="video-title">Fashion Production</h3>
+                    <p class="video-description">UAE, 2024</p>
+                </div>
+            </div>
+
+            <!-- Text Break -->
+            <div class="text-between-videos fade-in">
+                <h3>"Every frame tells a story"</h3>
+                <p>
+                    My approach blends artistic vision with technical precision, creating 
+                    content that captures authentic moments and delivers lasting impact.
+                </p>
+            </div>
+
+            <!-- Commercial Video 4 - Portrait -->
+            <div class="video-container fade-in" data-video="YOUR_YOUTUBE_ID">
+                <div class="video-placeholder">🏨</div>
+                <div class="video-overlay">
+                    <div class="play-icon"></div>
+                    <h3 class="video-title">Luxury Hotel</h3>
+                    <p class="video-description">Dubai, 2024</p>
+                </div>
+            </div>
+
+            <!-- Commercial Video 5 - Portrait -->
+            <div class="video-container fade-in" data-video="YOUR_YOUTUBE_ID">
+                <div class="video-placeholder">🚗</div>
+                <div class="video-overlay">
+                    <div class="play-icon"></div>
+                    <h3 class="video-title">Automotive</h3>
+                    <p class="video-description">UAE, 2024</p>
+                </div>
+            </div>
+
+            <!-- Commercial Video 6 - Landscape -->
+            <div class="video-container landscape fade-in" data-video="YOUR_YOUTUBE_ID">
+                <div class="video-placeholder">🎥</div>
+                <div class="video-overlay">
+                    <div class="play-icon"></div>
+                    <h3 class="video-title">Product Launch</h3>
+                    <p class="video-description">Dubai, 2023</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Wedding Work Section -->
+        <div class="scattered-portfolio">
+            <div class="portfolio-item large fade-in" data-video="YOUR_YOUTUBE_ID">
+                <div class="video-placeholder">💍</div>
+                <div class="video-overlay">
+                    <div class="play-icon"></div>
+                    <h3 class="video-title">Celebration</h3>
+                    <p class="video-description">Dubai, 2024</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item medium fade-in" data-video="YOUR_YOUTUBE_ID">
+                <div class="video-placeholder">🌸</div>
+                <div class="video-overlay">
+                    <div class="play-icon"></div>
+                    <h3 class="video-title">Destination</h3>
+                    <p class="video-description">UAE, 2024</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item small fade-in" data-video="YOUR_YOUTUBE_ID">
+                <div class="video-placeholder">✨</div>
+                <div class="video-overlay">
+                    <div class="play-icon"></div>
+                    <h3 class="video-title">Traditional</h3>
+                    <p class="video-description">India, 2024</p>
+                </div>
+            </div>
+
+            <div class="portfolio-item small fade-in" data-video="YOUR_YOUTUBE_ID">
+                <div class="video-placeholder">🕌</div>
+                <div class="video-overlay">
+                    <div class="play-icon"></div>
+                    <h3 class="video-title">Cultural</h3>
+                    <p class="video-description">UAE, 2023</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Instagram Section -->
+    <section class="instagram-section">
+        <div class="instagram-header">
+            <h2>Follow the Journey</h2>
+            <a href="https://instagram.com/YOUR_HANDLE" target="_blank" class="instagram-handle">@YOUR_HANDLE</a>
+            <a href="https://instagram.com/YOUR_HANDLE" target="_blank" class="instagram-btn">
+                <span class="instagram-icon">📷</span>
+                Follow on Instagram
+            </a>
+        </div>
+        <div class="instagram-grid">
+            <div class="instagram-item fade-in">
+                <div class="instagram-placeholder">📸</div>
+            </div>
+            <div class="instagram-item fade-in">
+                <div class="instagram-placeholder">🎥</div>
+            </div>
+            <div class="instagram-item fade-in">
+                <div class="instagram-placeholder">✨</div>
+            </div>
+            <div class="instagram-item fade-in">
+                <div class="instagram-placeholder">🎬</div>
+            </div>
+            <div class="instagram-item fade-in">
+                <div class="instagram-placeholder">💫</div>
+            </div>
+            <div class="instagram-item fade-in">
+                <div class="instagram-placeholder">🌟</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section class="contact-section" id="contact">
+        <div class="contact-container">
+            <h2>Let's Connect</h2>
+            <p class="contact-subtitle">
+                Ready to bring your vision to life? Get in touch to discuss your project.
+            </p>
+
+            <form class="contact-form">
+                <div class="form-group">
+                    <input type="text" placeholder="Your Name" required>
+                </div>
+                <div class="form-group">
+                    <input type="email" placeholder="Email Address" required>
+                </div>
+                <div class="form-group">
+                    <input type="tel" placeholder="Phone Number">
+                </div>
+                <div class="form-group">
+                    <input type="text" placeholder="Project Type">
+                </div>
+                <div class="form-group">
+                    <textarea placeholder="Tell us about your vision..." required></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Send Message</button>
+            </form>
+
+            <div class="contact-info">
+                <div class="contact-item">
+                    <h4>Email</h4>
+                    <p><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="8ae2efe6e6e5caf3e5fff8e4ebe7efa4e9e5e7">[email&#160;protected]</a></p>
+                </div>
+                <div class="contact-item">
+                    <h4>Phone</h4>
+                    <p>+971 XX XXX XXXX</p>
+                </div>
+                <div class="contact-item">
+                    <h4>Location</h4>
+                    <p>UAE & India</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-container">
+            <div class="footer-logo">YOUR NAME</div>
+            <div class="footer-socials">
+                <a href="https://instagram.com/YOUR_HANDLE" target="_blank">Instagram</a>
+                <a href="#">YouTube</a>
+                <a href="#">Vimeo</a>
+            </div>
+            <p class="footer-text">© 2024 Your Name. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <button class="modal-close" id="modalClose">✕</button>
+        <div class="modal-content">
+            <iframe class="modal-iframe" id="modalIframe" src="" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
+        </div>
+    </div>
+
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+        // Mobile Navigation
+        const hamburger = document.getElementById('hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+
+        hamburger.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Navbar Scroll
+        const navbar = document.getElementById('navbar');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        });
+
+        // Video Modal
+        const modal = document.getElementById('videoModal');
+        const modalIframe = document.getElementById('modalIframe');
+        const modalClose = document.getElementById('modalClose');
+        const videoContainers = document.querySelectorAll('[data-video]');
+
+        videoContainers.forEach(container => {
+            container.addEventListener('click', function() {
+                const videoId = this.getAttribute('data-video');
+                modalIframe.src = `https://www.youtube.com/embed/${videoId}?autoplay=1`;
+                modal.classList.add('active');
+                document.body.style.overflow = 'hidden';
+            });
+        });
+
+        modalClose.addEventListener('click', closeModal);
+        modal.addEventListener('click', (e) => {
+            if (e.target === modal) closeModal();
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            modalIframe.src = '';
+            document.body.style.overflow = 'auto';
+        }
+
+        // Smooth Scroll
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Fade-in Animation
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Form Submission
+        document.query
